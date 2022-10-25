@@ -1,0 +1,28 @@
+/* ------------------------------------------------------------------------------------------------------
+*  Style de votre bande dessinnée
+*  --------------------------------------------------------------------------------------------------- */
+
+body {
+  font-family: "Trebuchet MS", sans;
+}
+
+/* Mes personnages */
+.character-1 {
+  width: 100px;
+  height: 100px;
+
+  margin-left: 30%;
+
+  background: #FFBCBC;
+}
+
+.character-2 {
+  width: 80px;
+  height: 80px;
+
+  background: #CEE5D0;
+
+  margin-left: 15%;
+
+  border-radius: 50%;
+}

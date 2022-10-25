@@ -1,0 +1,175 @@
+/* ------------------------------------------------------------------------------------------------------
+*  Layout de base
+*  --------------------------------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS"
+}
+
+div {
+  margin: 0;
+}
+
+.container{ 
+  margin: 0;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+h1 {
+  margin: 10px;
+}
+
+.container {
+  display: flex;
+  
+  width: 100%;
+  min-height: 350px;
+}
+
+.cell {
+  /* taille par défaut, mais on pourra adapter la largeur avec les classes width-X */
+  width: 25%;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  
+  border: 1px solid gray;
+
+  margin: 10px;
+}
+
+/* classes pour contrôler la largeur des cellules */
+.width-33 {
+  width: 33.33%;
+  height: 400px;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-75 {
+  width: 75%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+/* ------------------------------------------------------------------------------------------------------
+*  Affichage des bulles
+*  --------------------------------------------------------------------------------------------------- */
+.bubbles {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.bubble {
+  position: relative;
+
+  background: #f2f2f2;
+  padding: 10px;
+
+  margin: 10px;
+
+  border-radius: 10px;
+
+  /* permet d'avoir la même largeur entre les bulles */
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+/* la pointe de la bulle */
+.bubble-arrow {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: #f2f2f2;
+  border-bottom: 0;
+  margin-left: -20px;
+  margin-bottom: -20px;
+}
+
+/* ------------------------------------------------------------------------------------------------------
+*  Scène au premier plan
+*  --------------------------------------------------------------------------------------------------- */
+.front {
+  flex-grow: 1;
+  width: 100%;
+  
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+a{
+  float: right;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------
+*  Message/overlay destiné aux smartphones
+*  --------------------------------------------------------------------------------------------------- */
+#overlay {
+  display: none;
+
+  /*   display: flex; */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  padding: 10%;
+
+  padding-bottom: 20%;
+
+  font-size: 2rem;
+  text-align: center;
+
+  background: white;
+}
+
+#overlay .small {
+  font-size: 0.7em;
+}
+
+@media (max-width: 900px) {
+  body {
+    overflow: hidden;
+  }
+  #overlay {
+    display: flex;
+  }
+}
